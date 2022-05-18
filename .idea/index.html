@@ -4,7 +4,53 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="Style.css" rel="stylesheet">
+<style>*{
+    background-color:#fff5ee;
+}
+.container{
+    width: 480px;
+    margin: 0 auto;
+}
+h1{
+    text-align: center;
+}
 
+.album{
+    width: 480px;
+    height: 600px;
+    overflow: hidden;
+}
+.imgs{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.5s;
+}
+
+
+
+button,button:active,button:focus{
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: aqua;
+    background-color: cadetblue;
+    outline: none;
+}
+button:hover{
+    background-color:turquoise;
+}
+button:disabled{
+    background-color: antiquewhite;
+    color: black;
+}
+.prev{
+    float: left;
+}
+.next{
+    float:right;
+}
+</style>
 </head>
 <body>
 <h1>SUN YOUNG SLIDER</h1>
@@ -21,6 +67,48 @@
     <button class="prev">PREV</button>
     <button class="next">NEXT</button>
 </div>
+<script>let curpos=0;//현재 보여지는 이미지
+let positionValue=0;
+const img_width=480;
+
+const pBn=document.querySelector(".prev");
+const pNn=document.querySelector(".next");
+const imgs=document.querySelector(".imgs")
+
+function next(){
+    if(curpos<4){
+        pBn.removeAttribute(`disabled`);
+        positionValue=positionValue-img_width;
+        imgs.style.transform = `translateX(${positionValue}px)`;
+        curpos +=1;
+        if (curpos === 4){
+            pNn.setAttribute(`disabled`,`true`)
+        }
+
+    }
+}
+
+
+function prev(){
+    if(curpos > 0){
+        pNn.removeAttribute(`disabled`);
+        positionValue=positionValue+img_width;
+        imgs.style.transform = `translateX(${positionValue}px)`;
+        curpos -=1;
+        if (curpos===0){
+            pBn.setAttribute(`disabled`,`true`)
+        }
+    }
+}
+
+function init(){
+    pBn.setAttribute(`disabled`,`true`);
+    pBn.addEventListener("click",prev)
+    pNn.addEventListener("click",next);
+}
+
+init();
+console.log(curpos)</script>
     <script src="JS14.js"></script>
 </body>
 </html>
