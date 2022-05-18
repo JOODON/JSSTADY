@@ -1,0 +1,45 @@
+*{
+    background-color:#fff5ee;
+}
+.container{
+    width: 480px;
+    margin: 0 auto;
+}
+h1{
+    text-align: center;
+}
+
+.album{
+    width: 480px;
+    height: 600px;
+    overflow: hidden;
+}
+.imgs{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+button,button:active,button:focus{
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: aqua;
+    background-color: cadetblue;
+    outline: none;
+}
+button:hover{
+    background-color:turquoise;
+}
+button:disabled{
+    background-color: antiquewhite;
+    color: black;
+}
+.prev{
+    float: left;
+}
+.next{
+    float:right;
+}
