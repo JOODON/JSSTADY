@@ -12,20 +12,23 @@ function next(){
         positionValue=positionValue-img_width;
         imgs.style.transform = `translateX(${positionValue}px)`;
         curpos +=1;
-    }
-    if (curpos===4){
-        pNn.setAttribute(`disabled`,true);
+        if (curpos === 4){
+            pNn.setAttribute(`disabled`,`true`)
+        }
+
     }
 }
+
+
 function prev(){
     if(curpos > 0){
-        pBn.removeAttribute(`disabled`);
+        pNn.removeAttribute(`disabled`);
         positionValue=positionValue+img_width;
         imgs.style.transform = `translateX(${positionValue}px)`;
         curpos -=1;
-    }
-    if (curpos===0){
-        pBn.setAttribute(`disabled`,true);
+        if (curpos===0){
+            pBn.setAttribute(`disabled`,`true`)
+        }
     }
 }
 
@@ -36,3 +39,4 @@ function init(){
 }
 
 init();
+console.log(curpos)
