@@ -1,4 +1,5 @@
-let curpos=0;//현재 보여지는 이미지
+
+let curpos=0;
 let positionValue=0;
 const img_width=480;
 

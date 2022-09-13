@@ -38,7 +38,7 @@ let frult=prompt("무슨 과일을 사실래유?")
 switch (frult){
     case '사과':
         console.log('사과입니다.')
-        breakqks
+        break
     case '바나나':
         console.log('바나나입니다.')
         break
